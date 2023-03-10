@@ -28,9 +28,37 @@ public class Test1 {
                                             JOptionPane.showInputDialog("Qual o endereco de sua agencia? ")), Double.parseDouble(JOptionPane.showInputDialog("Qual limite de sua conta?")), clientes));
                     break;
 
-                case 2:
+                case 2://Pesquisar Conta Especial usando número
+                    boolean flag =false;
+                    if(contas!=null && !contas.isEmpty()){
+                        long numPesq= Long.parseLong(JOptionPane.showInputDialog("Qual o numero de pesquisa"));
+                        for(ContaEspecial conta: contas){
+                            if(conta!=null && conta.getNumero()==numPesq){
+                                JOptionPane.showMessageDialog(null,"Conta ja existente "+conta.toString());
+                                flag=true;
+                            }
+                        }
+                    }
+                    if(!flag)
+                        JOptionPane.showMessageDialog(null,"Conta não existe");
+
                     break;
-                case 3:
+                case 3: //Pesquisar Conta Especial  usando número da agência
+                    flag=false;
+                    if(contas!=null && !contas.isEmpty()){
+                        int numPes= Integer.parseInt(JOptionPane.showInputDialog("Qual o numero da agencia de pesquisa"));
+                        for(ContaEspecial conta: contas){
+                            if(conta!=null && conta.getNumero()==numPes){
+                                JOptionPane.showMessageDialog(null,"Conta ja existente "+ conta.getAgencia().toString());
+                                flag=true;
+                            }
+                        }
+                    }
+                    if(!flag)
+                        JOptionPane.showMessageDialog(null,"Conta não existe");
+
+
+
                     break;
                 case 4:
                     break;
@@ -41,7 +69,7 @@ public class Test1 {
                         }
                     }
                     break;
-                case 6:
+                case 6: System.exit(0);
                     break;
 
             }
