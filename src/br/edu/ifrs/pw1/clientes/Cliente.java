@@ -9,6 +9,8 @@ public class Cliente {
         this.nome = nome;
     }
 
+    public Cliente() {}
+
     public String getCpf() {
         return cpf;
     }

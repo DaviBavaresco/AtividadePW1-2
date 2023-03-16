@@ -36,7 +36,7 @@ public class Test1 {
                         JOptionPane.showMessageDialog(null,"Conta não existe");
 
                     break;
-                case 3: //Pesquisar Conta Especial  usando número da agência
+                case 3: //Pesquisar Conta Especial usando número da agência
                     flag=false;
                     if(contas!=null && !contas.isEmpty()){
                         int numPes= Integer.parseInt(JOptionPane.showInputDialog("Qual o numero da agencia de pesquisa"));
